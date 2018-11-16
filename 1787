@@ -1,0 +1,11 @@
+#include<bits/stdc++.h>
+#define rep(n) for(int i=0;i<n;i++)
+using namespace std;
+int main()
+{
+    int m,n,d=0;cin>>m>>n;
+    rep(n){int p;cin>>p;p+=d; d=max(0,p-m);}
+    cout<<d<<endl;
+    return 0;
+}
+17
