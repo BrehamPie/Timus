@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+#define rep(i,n) for(int i=0;i<n;i++)
+#define per(i,n) for(int i=n-1;i>=0;i--)
+#define pb push_back
+#define mp make_pair
+using namespace std;
+bool comp(pair<int,int>x,pair<int,int> y)
+       {
+           return x.first>y.first;
+       }
+int main()
+{
+    int n;cin>>n;
+    vector<pair<int,int>>vect;
+    rep(i,n) {int a,b;cin>>a>>b;vect.pb(mp(b,a));}
+    stable_sort(vect.begin(),vect.end(),comp);
+    rep(i,vect.size()) cout<<vect[i].second<<" "<<vect[i].first<<endl;
+
+}
