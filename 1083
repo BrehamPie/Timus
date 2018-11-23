@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define rep(i,m,n) for(int i=m;i<n;i++)
+#define ll long long
+#define pb push_back
+int n,q,cas=1;
+
+int main()
+{
+    int ed,n,ans=1;string s;
+    cin>>n>>s;
+    int p=s.size();
+    if(n%p) ed=n%p;
+    else ed=p;
+    for(int i=n;i>=ed;i-=p)
+        ans*=i;
+    cout<<ans;
+}
