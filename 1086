@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define rep(i,m,n) for(int i=m;i<n;i++)
+#define ll long long
+#define pb push_back
+vector<int>prime;
+bitset<200000>arr;
+void sieve()
+{
+    prime.pb(2);
+    for(int i=3;i*i<=200000;i+=2)
+    {
+        if(!arr[i])
+        {
+            for(int j=i*i;j<200000;j+=i+i)
+                arr[j]=1;
+        }
+    }
+    for(int i=3;i<=200000;i+=2)
+    {
+        if(!arr[i])
+            prime.pb(i);
+    }
+
+}
+int main()
+{
+    sieve();
+    int t;cin>>t;
+    while(t--)
+    {
+        int d;cin>>d;
+        cout<<prime[d-1]<<endl;
+    }
+}
